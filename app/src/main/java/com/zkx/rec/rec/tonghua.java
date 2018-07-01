@@ -27,7 +27,6 @@ public class tonghua extends Service{
     public void onCreate() {
         yy=(TelephonyManager)getSystemService(TELEPHONY_SERVICE);
         yy.listen(new jtq(),jtq.LISTEN_CALL_STATE);
-        Log.d("rwfr", "onCreate: ");
     }
     @Override
     public void onDestroy() {
@@ -40,7 +39,6 @@ public class tonghua extends Service{
         public void onCallStateChanged(int state, String incomingNumber) {
             super.onCallStateChanged(state, incomingNumber);
             MediaRecorder ly=null;
-            Log.d("fe", "onCallStateChanged: ");
             switch(state)
             {
                 case TelephonyManager.CALL_STATE_IDLE:
@@ -61,9 +59,6 @@ public class tonghua extends Service{
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
-                case  TelephonyManager.CALL_STATE_RINGING:
-                    break;
             }
 
         }
